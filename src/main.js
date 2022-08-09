@@ -35,9 +35,17 @@ Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 
+import API from '@/api'
+Vue.prototype.$API = API
+
+import CategorySelect from '@/components/CategorySelect'
+import HintButton from '@/components/HintButton'
+Vue.component(CategorySelect.name, CategorySelect)
+Vue.component(HintButton.name, HintButton)
+
 new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 })
